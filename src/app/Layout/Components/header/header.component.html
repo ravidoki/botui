@@ -1,0 +1,12 @@
+<div [class]="'app-header header-shadow ' + (config$ | async)?.headerTheme">
+  <button mat-icon-button *ngIf="globals.toggleSidebar" (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <div class="app-header__content">
+        <div class="app-header-left" style="width: 100%">
+            <div class="row pl-4">
+                <div class="col-md-1 p-0"><img style="max-width:65%; height:auto"  
+                    src="../../../../assets/images/Ellipse.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></div>
+                <div class="col-md-6 mt-1"><img src="../../../../assets/images/headerAyuv.png" style="max-width: 5rem; height: auto;" alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<h4 mat-dialog-title class="modal_title">
+    {{title}}
+  </h4>
+  
+  <div mat-dialog-content class="add-content">
+    <h3>{{message}}</h3>
+  </div>
+  
+  <div mat-dialog-actions class="action-buttons">
+    <button mat-raised-button cdkFocusInitial [hidden]="!isWarning" (click)="onDismiss()" class="save-btn">Ok</button>
+    <button mat-raised-button cdkFocusInitial [hidden]="isWarning" (click)="onDismiss()" class="close-btn">No</button>
+    <button mat-raised-button [hidden]="isWarning" (click)="onConfirm()" class="save-btn">Yes</button>
+  </div>

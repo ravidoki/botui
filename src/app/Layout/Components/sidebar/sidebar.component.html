@@ -1,0 +1,28 @@
+<app-header [sidenav]="sidenav"></app-header>
+<mat-sidenav-container class="sidebar-nav-container">
+    <mat-sidenav #sidenav [mode]="globals.toggleSidebar===false?'side':'overlay'" [opened]="!globals.toggleSidebar"
+        class="ayuv-sidenav" fixedInViewport="false" fixedTopGap="0" fixedBottomGap="0">
+        <mat-nav-list>
+
+            <a *ngIf="isMenuEnable(menuConstant.dashboard)" mat-list-item routerLink="/home/dashboard"
+                routerLinkActive="active-item" class="nav-link mt-2" [routerLinkActiveOptions]="{exact: true}">
+                <mat-icon fontSet="material-icons-outlined">assessment</mat-icon>
+                <span class="vsm-title">Dashboard</span>
+            </a>
+            <a mat-list-item routerLink="/home/auditHome/user" *ngIf="isMenuEnable(menuConstant.audit)"
+                routerLinkActive="active-item" class="nav-link mt-2" [routerLinkActiveOptions]="{exact: true}">
+                <mat-icon fontSet="material-icons-outlined">dashboard</mat-icon>
+                <span class="vsm-title">Reports</span>
+            </a>
+
+            <a mat-list-item class="nav-link mt-2" routerLinkActive="active-item" (click)="logout()">
+                <mat-icon fontSet="material-icons-outlined">exit_to_app</mat-icon>
+                <span class="vsm-title">Logout</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="nav-bar-content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

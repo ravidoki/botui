@@ -1,0 +1,11 @@
+<h1 mat-dialog-title class="modal_title">{{dialogData?.title}}</h1>
+<div mat-dialog-content>
+    <p><strong>{{dialogData?.messageTitle}} </strong></p>
+    <p>{{dialogData?.contextText}}
+    </p>
+</div>
+<div mat-dialog-actions>
+    <button data-hook="model.buttonSecondary" class="reset-btn" mat-flat-button type="button" [mat-dialog-close]="''">{{dialogData?.buttonNo}}</button>
+    <button data-hook="model.buttonTertiary" class="send-btn"  mat-flat-button type="button" [mat-dialog-close]="'tertiary'" *ngIf="dialogData?.tertiaryButton">{{dialogData?.tertiaryButton}}</button>
+    <button data-hook="model.buttonPrimary" class="send-btn"  mat-flat-button type="button"  [mat-dialog-close]="'Yes'" cdkFocusInitial>{{dialogData?.buttonYes}}</button>
+</div>

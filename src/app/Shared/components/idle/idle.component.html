@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Do you want to continue this session?</h1>
+<div mat-dialog-content>
+    <p>You have been idle for a few minutes.</p>
+    <p>You will be automatically logged out from the system in 
+    <span style="color:red" *ngIf="countDown">{{counter | formatTime}} </span>
+    </p>
+</div>
+<div mat-dialog-actions>
+    <button  class="reset-btn"  mat-flat-button type="button" (click)="logout()">Logout</button>
+    <button  class="send-btn"  mat-flat-button type="button"  (click)="continueSession()" cdkFocusInitial>Continue Session</button>
+</div>

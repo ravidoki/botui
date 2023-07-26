@@ -1,0 +1,138 @@
+<mat-card class="audit-card">
+  <form class="filters-form" data-hook="audit.sentMessage.sentMessageAuditForm" [formGroup]="sentMessageAuditForm">
+    <table class="mb-3" aria-describedby="message audit filter1">
+      <th></th>
+      <tr>
+        <td>
+        </td>
+        <td>
+          <mat-form-field data-hook="audit.sentMessage.sentMessageAuditForm.templateType">
+            <mat-label>Message Type</mat-label>
+            <mat-select data-hook="audit.sentMessage.sentMessageAuditForm.templateTypeSelect"
+              formControlName="templateType">
+              <mat-option *ngFor="let msg of templateType" [value]="msg.key">
+                {{msg.value}}
+              </mat-option>
+            </mat-select>
+            <mat-error>
+              Select Message Type
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field data-hook="audit.sentMessage.sentMessageAuditForm.statusType">
+            <mat-label>Status Type</mat-label>
+            <mat-select data-hook="audit.sentMessage.sentMessageAuditForm.statusTypeSelect"
+              formControlName="statusType">
+              <mat-option *ngFor="let status of successOrFail" [value]="status.key">
+                {{status.value}}
+              </mat-option>
+            </mat-select>
+            <mat-error>
+              Select Status Type
+            </mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <table class="mt-3 mb-3" aria-describedby="message audit">
+      <th>
+
+      </th>
+      <tr>
+        <td>
+          <mat-form-field data-hook="audit.sentMessage.sentMessageAuditForm.fromDate">
+            <mat-label>From Date</mat-label>
+            <input [max]="maxDate" [matDatepicker]="fromDate"
+              data-hook="audit.sentMessage.sentMessageAuditForm.fromDateInput" matInput formControlName="fromDate"
+              placeholder="From date">
+            <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+            <mat-datepicker #fromDate></mat-datepicker>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field data-hook="audit.sentMessage.sentMessageAuditForm.toDate">
+            <mat-label>To Date</mat-label>
+            <input [max]="maxDate" [matDatepicker]="toDate"
+              data-hook="audit.sentMessage.sentMessageAuditForm.toDateInput" matInput formControlName="toDate"
+              placeholder="To Date">
+            <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+            <mat-datepicker #toDate></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+      <mat-error *ngIf="sentMessageAuditForm?.errors?.fromToDate" class="mt--3">
+        Select Valid Dates.
+      </mat-error>
+    </table>
+
+    <section class="day-button-row mt-3">
+      <mat-button-toggle-group appearance="legacy" formControlName="filterTimeLine">
+        <mat-button-toggle value="today">Today</mat-button-toggle>
+        <mat-button-toggle value="yesterday">Yesterday</mat-button-toggle>
+        <mat-button-toggle value="week">Week</mat-button-toggle>
+      </mat-button-toggle-group>
+      <div style="color: rgb(247, 4, 4); margin-top:10px;" *ngIf="sentMessageAuditForm.touched && !isDateFilterValid ">
+        Select From Date And To Date Or Time Line.</div>
+    </section>
+    <section class="button-group mt-4">
+      <button data-hook="audit.sentMessage.sentMessageAuditForm.clearButton" id="clearButton"
+        mat-stroked-button
+        class="clear-btn" type="reset" (click)="clear()">Clear</button>
+      <button data-hook="audit.sentMessage.sentMessageAuditForm.searchButton" mat-stroked-button class="search-btn" type="submit"
+        (click)="searchRecords(0,10 ,sorting.active, sorting.direction); paginator.firstPage();">Search</button>
+    </section>
+
+  </form>
+</mat-card>
+
+<div class="ml-2">
+  <div class="downloadButton">
+    <button data-hook="audit.userAudit.userAuditForm.downloadButton"
+      mat-stroked-button type="button" (click)="downloadResults()">Download CSV</button>
+  </div>
+  <table data-hook="audit.sentMessage.table" mat-table [dataSource]="dataSource" class="example-table w-100" matSort
+    matSortActive="dateUpdated" aria-describedby="message audit table" matSortDisableClear matSortDirection="desc" (matSortChange)="matSortChange($event)">
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let row">
+        {{row.firstName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td mat-cell *matCellDef="let row">
+        {{row.lastName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="formName">
+      <th mat-header-cell *matHeaderCellDef>formName</th>
+      <td mat-cell *matCellDef="let row">
+        {{row.formName}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="parent">
+      <th mat-header-cell *matHeaderCellDef>Parent</th>
+      <td mat-cell *matCellDef="let row">
+        {{row.parent}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="relationship">
+      <th mat-header-cell *matHeaderCellDef>relationship</th>
+      <td mat-cell *matCellDef="let row">
+        {{row.relationship}}</td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="no-data-found" *ngIf="dataSource?.data?.length === 0">
+    No Records Found!
+  </div>
+  <mat-paginator #paginator [length]="messagesLength" [pageSize]="10" [pageSizeOptions]="[10, 20, 50, 100]"
+    (page)="pageChangeEvent($event)" aria-label="Select page"></mat-paginator>
+</div>

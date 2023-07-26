@@ -1,0 +1,47 @@
+@import "../../../../assets/app-theme-variables.scss";
+.save-btn {
+    height: 50px;
+    width: 127px;
+    background-color: #00a3c4;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+    color: #fff;
+    margin-left:10px;
+}
+.close-btn {
+    box-sizing: border-box;
+    height: 50px;
+    width: 127px;
+    border: 1px solid #979797;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+    font-weight: bold;
+}
+
+.action-buttons {
+    margin-bottom: 1rem;
+}
+.add-content{
+    margin-top:1rem;
+    align-content: center;
+}
+.modal_title{
+    font-size: 2rem !important;
+    color: #065666 !important;
+    margin-bottom: 1.5rem ;
+}
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: $primary-color !important;
+}
+:host ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: $table-cell-border-bottom-color !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    //margin-top: 1em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    .mat-form-field-underline {
+        bottom: 0;
+    }
+}
+

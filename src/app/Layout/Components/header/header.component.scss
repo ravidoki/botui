@@ -1,0 +1,47 @@
+@import "../../../../assets/app-theme-variables.scss";
+
+.change-button {
+    background-color: $primary-color;
+    color: $white;
+}
+.gpAutoSelect-label {
+    color: $warm-color !important;
+    padding-right: 20px !important;
+    font-weight: bold;
+}
+
+.app-header {
+    height: $app-header-height;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    z-index: 10;
+    transition: all 0.2s;
+    position: fixed;
+    width: 100%;
+
+    &.header-shadow {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+    }
+
+    .app-header__content {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        flex: 1;
+        padding-left: 16rem;
+        height: $app-header-height;
+        transition: all 0.2s;
+
+        .app-header-left {
+            display: flex;
+            align-items: center;
+            padding: 0 0 0 $layout-spacer-x;
+        }
+    }
+}
+.gpAutoSelect{
+    text-align: right;
+    padding-right:5px;
+}
+

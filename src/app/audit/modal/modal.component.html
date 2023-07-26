@@ -1,0 +1,53 @@
+<h1 mat-dialog-title class="modal_title">{{dialogData?.title}}</h1>
+<div mat-dialog-actions>
+    <button class="reset-btn" class="send-btn" mat-flat-button type="button" (click)="exportCSV()">Download</button>
+    <button class="reset-btn" class="send-btn" mat-flat-button type="button" (click)="printData()">Print</button>
+    <button class="reset-btn" class="send-btn" mat-flat-button type="button" (click)="emailData()">Email</button>
+    <button class="reset-btn" mat-flat-button type="button" [mat-dialog-close]="''">Close</button>
+</div>
+<div mat-dialog-content>
+    <table  *ngIf="dataSource?.data?.length" mat-table [dataSource]="dataSource" class="example-table w-100" matSort #table
+            matSortActive="id" aria-describedby="message audit table" matSortDisableClear matSortDirection="desc" (matSortChange)="matSortChange($event)">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.Id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.Name}}</td>
+        </ng-container>
+
+        <!-- State Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.Email}}</td>
+        </ng-container>
+        <!-- Created Column -->
+
+        <ng-container matColumnDef="mobile">
+            <th mat-header-cell *matHeaderCellDef>Mobile</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.Mobile}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef>State</th>
+            <td mat-cell *matCellDef="let row">
+                {{row.State}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div class="no-data-found" *ngIf="dataSource?.data?.length === 0">
+        No Records Found!
+    </div>
+</div>
+<mat-paginator  [hidden]="dataSource?.data?.length < 10" #paginator [length]="length" [pageSize]="10" [pageSizeOptions]="[10, 20, 50, 100]"
+                (page)="pageChangeEvent($event)" aria-label="Select page"></mat-paginator>
+

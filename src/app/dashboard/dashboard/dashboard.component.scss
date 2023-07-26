@@ -1,0 +1,145 @@
+@import "../../../assets/app-theme-variables.scss";
+/* th.mat-header-cell {
+    text-align: center !important;
+} */
+.header-element {
+    font-size: 2rem !important;
+    line-height: 2rem;
+    font-weight: bold;
+    color: #065666 !important; //variable
+    letter-spacing: 0;
+    background-color: #f0f3f8; //variable
+    height: 2rem;
+
+    &::before {
+        content: "";
+        height: 100%;
+        width: 8px;
+        background: #00a3c4 !important; //variable
+        position: absolute;
+        left: -7px;
+        top: 0;
+    }
+}
+.header-position {
+    position: relative;
+    margin: 0.5rem;
+}
+.surgeries-table {
+    width: 100%;
+}
+:host ::ng-deep .mat-table thead {
+    background: none !important;
+    background-color: rgba(216, 216, 216, 0.15) !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14) !important;
+}
+tr.mat-header-row {
+    background: none !important;
+    background-color: rgba(216, 216, 216, 0.15) !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14) !important;
+}
+table tr {
+    height: 65px;
+}
+td.mat-cell {
+    border-bottom-color: #9decf9;
+    height: 17px;
+    color: #171717;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+th.mat-header-cell {
+    height: 22px;
+    color: #171717;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 23px;
+}
+:host ::ng-deep .mat-sort-header-content {
+    color: $table-tr-color;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+:host ::ng-deep .mat-sort-header-arrow {
+    color: $primary-color;
+}
+.new-button {
+    background-color: #00a3c4 !important; //variable
+    color: #fff;
+}
+.view-btn {
+    background-color: #c4f1f9;
+    color: #086f83;
+    box-shadow: none !important;
+}
+.new-element {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 1rem;
+    .mat-icon {
+        color: #fff !important;
+    }
+}
+
+.delete-btn {
+    background-color: red;
+    color: #fff !important;
+}
+.select-btn {
+    background-color: $primary-color;
+    color: #fff !important;
+}
+.status-approved {
+    border-radius: 50px;
+    color: #139e53;
+    background-color: #d4ffe8;
+    padding: 5px 10px;
+}
+.status-pending {
+    border-radius: 50px;
+    color: #000;
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+}
+::ng-deep .action-menu {
+    background: #086f83;
+    .mat-menu-item {
+        color: #9cc5cd !important;
+    }
+
+    button.mat-menu-item {
+        background-color: transparent;
+    }
+
+    button.mat-menu-item:hover {
+        background-color: #00a3c4;
+        color: #fff !important;
+    }
+}
+.actions-btn ::ng-deep .mat-icon {
+    color: #00a3c4 !important;
+}
+/* @media only screen and (min-width: 768px) {
+    .surgeries-table {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .surgeries-table {
+        width: 90%;
+    }
+}
+@media only screen and (min-width: 1300px) {
+    .surgeries-table {
+        width: 70%;
+    }
+} */
+
+.cursor-pointer {
+    cursor: pointer;
+}

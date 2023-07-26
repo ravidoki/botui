@@ -1,0 +1,6 @@
+.git
+.gitignnore
+node_modules
+.vscode
+.localstack
+.idea

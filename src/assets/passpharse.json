@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "guid": "0dfa2f32-4c65-4c1e-9a48-14587615d20b",
+        "passPhrase" : "dividend doodle cozy jolly willing",
+        "isActive": true,
+        "surgery": "Surgery1"
+    },
+    {
+        "id": "2",
+        "guid": "a67bb21f-c6bc-447e-910e-e1f2bc1c9a9d",
+        "passPhrase" : "feisty penalty flammable tray strike",
+        "isActive": false,
+        "surgery": "Surgery2"
+    },
+    {
+        "id": "3",
+        "guid": "41cf2d91-9fbd-4969-9385-9d7f1bc4f0b5",
+        "passPhrase" : "line selected resale jurist lark",
+        "isActive": false,
+        "surgery": "Surgery3"
+    }
+]

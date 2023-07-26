@@ -1,0 +1,56 @@
+.header-element{
+    font-size: 2rem !important;
+    line-height: 2rem;
+    font-weight: bold;
+    color:#065666 !important;//variable
+    letter-spacing: 0;
+    background-color:#f0f3f8;//variable
+    height: 2rem;
+  
+    &::before {
+      content: '';
+      height: 100%;
+      width: 8px;
+      background:#00A3C4 !important; //variable
+      position: absolute;
+      left: -7px;
+      top: 0;
+    }
+  }
+.header-position{
+    position: relative;
+    margin: 0.5rem;
+}
+.tab-header ::ng-deep .mat-tab-header  {
+    border-bottom: none !important;
+}
+:host ::ng-deep .mat-tab-label{
+    height: 50px !important;
+    min-width: 160px !important;
+    padding: 0 24px !important;
+    cursor: pointer;
+    box-sizing: border-box;
+    opacity: 1 !important;
+    margin: 1rem;
+    color: #00a3c4;//variable
+    font-size: 20px;
+    font-weight: 600;
+}
+:host ::ng-deep .mat-tab-label-active{
+    height: 50px !important;
+    min-width: 160px !important;
+    border-radius: 6px !important;
+    background-color: #00a3c4 !important;//variable
+    padding: 0 24px !important;
+    cursor: pointer;
+    box-sizing: border-box;
+    opacity: 1 !important;
+    margin: 1rem;
+    color: #fff;//variable
+    font-size: 20px;
+    font-weight: 600;
+}
+:host ::ng-deep .mat-ink-bar {
+    background-color: none !important;
+    height: 0 !important;
+}

@@ -1,0 +1,47 @@
+<div class="container-fluid  app-main__inner flex-lg-row" id="body">
+    <div class="row">
+    </div>
+    <div class="row margin-0 w-100 overflow-auto xs-ht position-relative">
+        <img src="../../../../assets/images/ayuv_logo.png" class="img-fluid logo-img" alt="">
+        <div class="col-lg-3 col-sm-12 div-content">
+            <form data-hook="loginBoxed.loginForm" [formGroup]="loginForm" autocomplete="off" class="form-div">
+                <ng-container *ngIf="!loginResponse">
+
+
+                    <div class="row mt-3  text-center login-title">
+                        <h2>Login to your account</h2>
+                    </div>
+                    <div class="row">
+                        <mat-form-field data-hook="loginBoxed.password" class="w-100">
+                            <mat-label>Pass Pharse</mat-label>
+                            <input data-hook="loginBoxed.passwordInput" matInput [type]="passwordType" [maxlength]="inputFieldMaxLength" 
+                                placeholder="Pass Pharse" formControlName="password"  required />
+                            <mat-error>
+                                Please enter a valid Password (e.g ********)
+                            </mat-error>
+                            <mat-icon matSuffix *ngIf="passwordType ==='password'" (click)="passwordType ='text'">
+                                visibility_off</mat-icon>
+                            <mat-icon matSuffix *ngIf="passwordType ==='text'" (click)="passwordType ='password'">
+                                visibility_on</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="row mt-3">
+                        <button class="w-100 login-btn" data-hook="loginBoxed.loginButton" mat-flat-button color=""
+                            type="submit" (click)="login()">Login</button>
+                    </div>
+                </ng-container>
+
+            </form>
+
+        </div>
+        <div class="col-lg-4 col-sm-12 d-lg-block info-col">
+
+            <p class="">
+                <mat-icon>info</mat-icon>
+                Login to <span class="ayu-clr">AyuvWeb</span> now to have
+                video consultations and text your patients. <br>Login now and try for yourself. Your account
+                will be validated and you can benefit from all Ayuv features.
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="search-wrapper" [class.active]="isActive">
+    <div class="input-holder">
+        <input data-hook="header.searchBox.search-input" type="text" placeholder="Type to search" class="search-input">
+        <button data-hook="header.searchBox.searchButton" class="search-icon" (click)="isActive = true"><span></span></button>
+    </div>
+    <button data-hook="header.searchBox.cancelSearchButton" class="close" (click)="isActive = false"></button>
+</div>

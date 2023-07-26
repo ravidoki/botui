@@ -1,0 +1,116 @@
+@import "../../../../assets/app-theme-variables.scss";
+.sidebar-nav-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $page-bg-color;
+}
+
+.ayuv-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    background: $warm-color;
+    border-radius: 0 0 50px 0;
+}
+.mat-icon{
+    color:$side-menu-text-color !important;
+    margin-right:0.5rem;
+    /* font-size:21px !important;
+    font-weight: 500; */
+}
+.mat-nav-list .mat-list-item:focus,
+.mat-nav-list .mat-list-item:hover {
+    background-color: $primary-color;
+    color: $white !important;
+    &::before {
+        content: "";
+        height: 48px;
+        width: 8px;
+        background: $white !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+:host ::ng-deep .active-item {
+    font-weight: 600;
+    background-color: $primary-color;
+    color: $white !important;
+    .mat-icon{
+        color:$white!important;
+    }
+    &::before {
+        content: "";
+        height: 48px;
+        width: 8px;
+        background: $white !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+.mat-list-base .mat-list-item {
+    color: $side-menu-text-color;
+    position: relative;
+    //text-align:center
+}
+.vsm-icon {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+:host ::ng-deep .mat-list-item-content {
+    margin-left: 1rem;
+}
+
+.flex-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+}
+
+.app-header__img {
+    width: 60px;
+    height: 60px;
+    margin-top: 0.3rem;
+    margin-left: 0.5rem;
+    max-width: 10rem; 
+    //margin-bottom: 1rem;
+    border-radius: 12px;
+}
+.user-div {
+    margin-left: 0.5rem;
+}
+.icon-edit {
+    color: $white;
+    background-color: $primary-color;
+    position: absolute;
+    top: 3px;
+    right: 6px;
+    border-radius: 60px;
+    padding: 0.2em 0.4em;
+}
+.emailId{
+    font-size:8px;
+    color:$white;
+    margin-bottom:0rem;
+  }
+  .phoneNumber{
+    font-size:12px;
+    color:$white;
+    margin-bottom:0rem;
+  }
+  .user_name{
+    font-size:16px;
+    color:$white;
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+  }
+  .material-icons-outlined{
+      font-size:22px !important
+  }

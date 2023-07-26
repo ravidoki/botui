@@ -1,0 +1,15 @@
+<div class="container-fluid mt-4">
+    <div class="header-position">
+        <mat-toolbar role="heading" class="header-element"><span>Report</span></mat-toolbar>
+    </div>
+    <mat-tab-group animationDuration="0ms" class="tab-header" (selectedTabChange)="onTabClick($event)">
+        <mat-tab class="tab-btn" label="Diabetics">
+            <ng-template mat-tab-label>Diabetics</ng-template>
+            <app-messages-audit [selectedTabIndex]="selectedTabIndex"></app-messages-audit>
+        </mat-tab>
+        <mat-tab class="tab-btn" label="Mental health">
+            <ng-template mat-tab-label> Mental health</ng-template>
+            <app-messages-audit [selectedTabIndex]="selectedTabIndex"></app-messages-audit>
+    </mat-tab>
+    </mat-tab-group>
+</div>

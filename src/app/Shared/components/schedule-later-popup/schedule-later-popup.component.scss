@@ -1,0 +1,22 @@
+.text-space-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+.mr-5 {
+    margin-right: 2rem !important;
+  }
+  .closeIcon {
+      align-items: center;
+      display: flex;
+      cursor: pointer;
+  }
+
+  ::ng-deep .mat-form-field-suffix {
+      display: flex;
+  }
+   
+     ::ng-deep .mat-datepicker-content {
+      button:disabled, button[disabled]{
+        color: red !important;
+      }
+  }
